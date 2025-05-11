@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneakers Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <h1 class="logo">Sneakers</h1>
+            <ul class="nav-links">
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div class="align_right">
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count" class="cart-badge hidden">0</span>
+                </div>
+                <div>
+                    <img class="icon_image" src="images/image-avatar.png" alt="" sizes="" srcset="">
+                </div>
+            </div>
+            <div id="cart-dropdown" class="cart-dropdown hidden">
+                <h2>Cart</h2>
+                <div id="cart-items"></div>
+                <div class="total">
+                    <span>Total:</span>
+                    <span id="total-price">$0.00</span>
+                </div>
+                <button id="checkout-button">Checkout</button>
+            </div>
+
+        </div>
+    </nav>
+    <div class="container">
+        <div class="image-thumbnail-container">
+            <div class="main-image">
+                <img id="main-image" src="images/main-image.jpg" alt="Main Image">
+            </div>
+            <div class="thumbnail-container">
+                <img src="images/image-product-1-thumbnail.jpg" alt="Thumbnail 1" class="thumbnail" data-index="0" />
+                <img src="images/image-product-2-thumbnail.jpg" alt="Thumbnail 2" class="thumbnail" data-index="1" />
+                <img src="images/image-product-3-thumbnail.jpg" alt="Thumbnail 3" class="thumbnail" data-index="2" />
+                <img src="images/image-product-4-thumbnail.jpg" alt="Thumbnail 4" class="thumbnail" data-index="3" />
+            </div>
+        </div>
+
+        <div class="info">
+            <h5>Sneaker Company</h5>
+            <h1>Fall Limited Edition Sneakers</h1>
+            <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+            <div class="price">
+                <div class="price-info">
+                    <span class="current-price">$125.00</span>
+                    <span class="discount">50%</span>
+                </div>
+                <span class="original-price">$250.00</span>
+            </div>
+
+            <div class="quantity-controls">
+                <button id="decrease">-</button>
+                <span id="quantity">0</span>
+                <button id="increase">+</button>
+                <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="carousel-modal" class="modal hidden">
+        <div class="carousel-content">
+            <span class="close" id="close-carousel">&times;</span>
+
+            <!-- Main Image with Navigation Controls -->
+            <div class="carousel-main-image">
+                <img id="carousel-image" src="" alt="Carousel Image" />
+                <button id="prev-button" class="carousel-nav">&#10094;</button>
+                <button id="next-button" class="carousel-nav">&#10095;</button>
+            </div>
+
+            <!-- Thumbnails in Modal -->
+            <div class="thumbnail-container carousel-thumbnails">
+                <img src="images/image-product-1-thumbnail.jpg" class="thumbnail lightbox-thumbnail" data-index="0" />
+                <img src="images/image-product-2-thumbnail.jpg" class="thumbnail lightbox-thumbnail" data-index="1" />
+                <img src="images/image-product-3-thumbnail.jpg" class="thumbnail lightbox-thumbnail" data-index="2" />
+                <img src="images/image-product-4-thumbnail.jpg" class="thumbnail lightbox-thumbnail" data-index="3" />
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

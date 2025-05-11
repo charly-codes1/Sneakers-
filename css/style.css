@@ -1,0 +1,465 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* to make the nav bar have that light under it */
+
+.navbar {
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-left: 10%;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: orange;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* this part contrrols the  image and cart */
+
+.align_right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* controls the image size */
+
+.icon_image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+/* stops here */
+
+.cart-icon {
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+}
+
+.info {
+    margin-left: 30px;
+    padding-left: 15%;
+    padding-top: 13%;
+    margin-right: 15%;
+}
+
+.price {
+    margin: 10px 0;
+}
+
+.current-price {
+    font-size: 24px;
+    color: black;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #aaa;
+    /* margin-left: 10px; */
+    margin-top: 20%;
+}
+
+.discount {
+    color: white;
+    /* Button text color */
+    margin-left: 15px;
+    /* Reduce space on the left (set to 0 if unnecessary) */
+    margin-right: 0px;
+    /* Remove or reduce space on the right */
+    margin-top: 0px;
+    /* Reduce space above the button */
+    margin-bottom: 0px;
+    /* Reduce space below the button */
+    background-color: black;
+    /* Background color */
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 5px 10px;
+    /* Reduce the internal space (top-bottom, left-right) */
+    font-size: 14px;
+    /* Optional: adjust font size */
+    width: auto;
+    /* Optional: sets the button width to fit its content */
+    border: none;
+    /* Removes border for a cleaner look */
+}
+
+.discount:hover {
+    background-color: gray;
+    /* Optional: adds hover effect */
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    padding-top: 9%;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-controls button {
+    margin: 0 10px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    color: orange;
+}
+
+.quantity-controls span {
+    font-size: 1.2em;
+    margin: 0 10px;
+}
+
+
+/* end */
+
+.quantity {
+    margin: 0 10px;
+}
+
+.add-to-cart {
+    color: orange;
+    margin-left: 10px;
+    border-radius: 10%;
+}
+
+
+/* Ensure specificity to override conflicting styles */
+
+.container .add-to-cart {
+    padding: 15px 30px;
+    /* Increase padding for size */
+    font-size: 18px;
+    /* Increase text size */
+    width: 100%;
+    /* Optional: Make it full-width */
+    max-width: 300px;
+    /* Optional: Limit the maximum width */
+    background-color: #ff7d1a;
+    /* Keep the button visually appealing */
+    color: black;
+    /* Text color */
+    border: none;
+    /* Remove border */
+    border-radius: 5px;
+    /* Rounded corners for style */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    text-align: center;
+}
+
+
+/* Specific hover style */
+
+.container .add-to-cart:hover {
+    background-color: #ffab76;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.cart-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.cart-dropdown.hidden {
+    display: none;
+}
+
+.cart-dropdown h2 {
+    margin: 0 0 10px 0;
+}
+
+.cart-dropdown .total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+
+/* THUMBNAILS */
+
+
+/* Main Image Hover */
+
+.main-image img {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+    max-width: 500px;
+    margin-left: 40%;
+    margin-top: 50%;
+}
+
+.main-image img:hover {
+    opacity: 0.8;
+}
+
+
+/* Thumbnail Styles */
+
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    margin-left: 40%;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: border 0.3s ease-in-out;
+}
+
+.thumbnail:hover {
+    border: 2px solid orange;
+    opacity: 0.8;
+}
+
+.thumbnail.active {
+    border: 2px solid orange;
+}
+
+
+/* Modal Lightbox Styles */
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.carousel-controls button {
+    position: absolute;
+    top: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button:hover {
+    background: white;
+    color: orange;
+}
+
+h5 {
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+p {
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/* Carousel Main Image Section */
+
+.carousel-main-image {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    /* Increase this value for a larger carousel */
+    margin: auto;
+}
+
+#carousel-image {
+    width: 100%;
+    height: auto;
+    /* Maintain the aspect ratio */
+    border-radius: 10px;
+}
+
+
+/* Carousel Navigation Controls */
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+    font-size: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    transform: translateY(-50%);
+}
+
+#prev-button {
+    left: 0px;
+    /* margin-right: 25px; */
+}
+
+#next-button {
+    right: 0px;
+    /* padding-left: 25px; */
+}
+
+.carousel-nav:hover {
+    background-color: white;
+    color: orange;
+}
+
+
+/* Thumbnails in Lightbox */
+
+.carousel-thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.lightbox-thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border 0.3s;
+}
+
+.lightbox-thumbnail:hover {
+    border: 2px solid orange;
+    opacity: 0.8;
+}
+
+.lightbox-thumbnail.active {
+    border: 2px solid orange;
+}
